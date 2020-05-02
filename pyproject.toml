@@ -9,6 +9,7 @@ python = "^3.7"
 ask_schools = "^0.3.6"
 lh3api = "^0.2.0"
 sp_ask_chats_utils = "^0.1.2"
+peewee = "^3.13.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
