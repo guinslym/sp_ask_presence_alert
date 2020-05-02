@@ -11,6 +11,7 @@ lh3api = "^0.2.0"
 sp_ask_chats_utils = "^0.1.2"
 peewee = "^3.13.3"
 requests = "^2.23.0"
+twisted = "^20.3.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
