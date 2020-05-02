@@ -6,14 +6,9 @@ authors = ["Guinsly Mondesir <guinslym@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-pandas = "^1.0.3"
-sp_ask_report_chats_per_school = "^0.1.4"
 ask_schools = "^0.3.6"
 lh3api = "^0.2.0"
 sp_ask_chats_utils = "^0.1.2"
-openpyxl = "^3.0.3"
-beautifulsoup4 = "^4.9.0"
-html5lib = "^1.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
