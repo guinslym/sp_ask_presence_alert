@@ -31,8 +31,11 @@ class Service(Model):
     class Meta:
         database = db
 
+    def __str__(self):
+        return "{0}:{1} :\t\t{2}".format("Queue",self.queue, self.status)
+
     def __repr__(self):
-        return "{0}:{1} :\t{2}".format("Queue",Service.name, Service.status)
+        return "{0}:{1} :\t{2}".format("Queue",self.queue, self.status)
 
 def create_table():
     Service.create_table()
@@ -57,7 +60,7 @@ def check_service_and_insert_to_db():
         try:
             response = requests.get(url).content
             response = response.decode("utf-8")
-            Service(queue=queue, status=response).save()
+            Service.insert(queue=queue, status=response).execute()
         except Exception as e:
             # app_log.error("Can't add value in database"+ str(e) )
             pass
@@ -65,10 +68,15 @@ def check_service_and_insert_to_db():
 
 if __name__ == '__main__':
     timeout = 60.0
-    try:
-        Service.delete().execute() 
-    except:
-        create_table()
-        seed()
-        all_db()
+    # try:
+    #     Service.delete().execute() 
+    # except:
+    #     pass
+    create_table()
+    check_service_and_insert_to_db()
+    query = Service.select()
+    queues = [service.queue for service in query]
+    print(len(queues))
+    for service in query:
+        print(service)
 
