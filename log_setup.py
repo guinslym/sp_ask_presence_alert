@@ -12,9 +12,6 @@ import logging
 from logging.handlers import RotatingFileHandler
 import sys
 
-import lh3.api
-# client = lh3.api.Client()
-# client.set_options(version = 'v1')
 
 fmt_date = '%Y-%m-%d'
 fmt_hour = '%H:%M:%S'
@@ -55,6 +52,4 @@ def find_which_weekday():
         return [11.5, 1.5]
 
 if __name__ == '__main__':
-    #presence 
-    #chat_activity_excel try...
     pass

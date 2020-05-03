@@ -1,0 +1,15 @@
+dist: xenial  # required for Python >= 3.4
+language: python
+cache: pip
+matrix:
+  include:
+    - name: "3.4"
+      python: 3.4
+    - name: "3.7"
+      python: 3.7
+before_install:
+- pip install poetry
+install:
+- poetry install -v
+script:
+- pytest
