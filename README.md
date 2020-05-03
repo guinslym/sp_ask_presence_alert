@@ -60,6 +60,5 @@ TO="phone number"
 
 1.  Replace SMS with email to ASK SP inbox
 2.  Add tests
-3.  ~~Add Docker~~
 4.  Move the logic to create a Mobile app
 
