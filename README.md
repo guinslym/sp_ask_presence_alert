@@ -9,7 +9,7 @@
 
 ## SP ASK Service SMS Alert script
 
-Script to ping the LibraryH3lp 3 queues and if one of the queue is close after 15 minutes it will send an SMS or email to Scholars-Portal
+Script to ping our 3  main LibraryH3lp services (web, clavardez, sms) and if one of the queue is close during standard Ask opening Hours after 15 minutes it will send an SMS or email to Scholars-Portal
 <br/>
 
 
