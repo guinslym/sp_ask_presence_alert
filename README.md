@@ -4,7 +4,7 @@
 ![PyPI](https://img.shields.io/github/license/guinslym/ask_schools.svg)
 ](https://pypi.org/project/ask_schools/)
 [![TravisCI](https://travis-ci.org/guinslym/ask_schools.svg?branch=master)](https://travis-ci.org/guinslym/ask_schools)
-https://img.shields.io/pypi/dd/requests?style=flat-square
+
 <hr/>
 
 ## SP ASK Service SMS Alert script
