@@ -42,7 +42,7 @@ TO="phone number"
 ```
 
 ## Screenshots
-
+This is a mockup, it will only send if one of the services has been down for at least 10 minutes
 <p float="left">
     <img src="screenshots/result_sms.png" width="400"/>
 </p>
