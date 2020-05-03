@@ -110,3 +110,5 @@ unanswered_chats.html
 *.html
 *.csv
 *.json
+*.db-shm
+*.db-wal
