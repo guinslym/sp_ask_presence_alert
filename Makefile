@@ -2,7 +2,7 @@
 
 .PHONY: info
 info:
-	echo "\nList of Makefile commands:\n" && echo "  readme" && echo "  run"  && echo "  screenshots-root" && echo "  screenshots"  && echo "  github"   && echo "  simulator" 
+	echo "\nList of Makefile commands:\n" && echo "  readme" && echo "  run"  && echo "  setup" && echo "  packages"  && echo "  github"   && echo "  push" 
 info-info:
 	echo "\noutput the list of commands for this Makefile\n"
 
@@ -32,7 +32,7 @@ info-run:
 
 .PHONY: packages
 packages:
-	poetry install
+	poetry install -v
 info-packages:
 	echo "\nInstall packages\n"
 
