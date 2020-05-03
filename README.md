@@ -12,6 +12,13 @@ https://img.shields.io/pypi/dd/requests?style=flat-square
 Script to ping our 3  main LibraryH3lp services (web, clavardez, sms) and if one of the queue is close during standard Ask opening Hours for more than 10 minutes then this script will send an SMS or to the Scholars-Portal Ask coordinator
 <br/>
 
+
+## Screenshots
+This is a mockup, it will only send if one of the services has been down for at least 10 minutes
+<p float="left">
+    <img src="screenshots/result_sms.png" width="400"/>
+</p>
+
 ## Installation
 
 
@@ -45,11 +52,6 @@ FROM="phone number"
 TO="phone number"
 ```
 
-## Screenshots
-This is a mockup, it will only send if one of the services has been down for at least 10 minutes
-<p float="left">
-    <img src="screenshots/result_sms.png" width="400"/>
-</p>
 
 
 ## Todo
