@@ -1,5 +1,6 @@
 # SP ASK Service SMS Alert SCRIPT
 Script to ping the LibraryH3lp 3 queues and if one of the queue is close after 15 minutes it will send an SMS or email to Scholars-Portal
+<br/>
 [
 ![PyPI](https://img.shields.io/pypi/v/ask_schools.svg)
 ![PyPI](https://img.shields.io/pypi/pyversions/ask_schools.svg)
