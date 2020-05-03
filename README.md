@@ -30,7 +30,7 @@ poetry run python sp_ask_service_availability_alert.py
 ## if above (poetry) installed; Use make
 make run
 ```
-In addition it is useful to execute it from a **crontab**
+In addition it is useful to execute it from **crontab**
 `*/15 * * * * python sp_ask_service_availability_alert.py`
 
 ## Requirement
