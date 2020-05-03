@@ -6,13 +6,10 @@
 [![TravisCI](https://travis-ci.org/guinslym/ask_schools.svg?branch=master)](https://travis-ci.org/guinslym/ask_schools)
 <hr/>
 
-
-
 ## SP ASK Service SMS Alert script
 
 Script to ping our 3  main LibraryH3lp services (web, clavardez, sms) and if one of the queue is close during standard Ask opening Hours after 15 minutes it will send an SMS or email to Scholars-Portal
 <br/>
-
 
 ## Installation
 
