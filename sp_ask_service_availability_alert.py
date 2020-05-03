@@ -27,7 +27,7 @@ db = SqliteDatabase('presence.db', pragmas={
     'cache_size': -1024 * 64})
 
 class Service(Model):
-    """Record queue and their Status to
+    """Record queue/service and their Status to
         AVAILABLE,
         UNAVAILABLE, 
     """
@@ -98,11 +98,12 @@ def send_sms(web, clavardez, sms):
     )
 
 def verify_Ask_service(min_alert_minute):
-    """If Ask Service is down equal or more of the
-     'min_alert_minute' then send SMS
+    """If Ask Service is down for at least 10 minutes (min_alert_minute)
+        during Ask opening hours
+            then send a SMS
 
     Arguments:
-        min_alert_minute {[type]} -- [description]
+        min_alert_minute {int} -- Minimum minute of downtime
     """
     fr_result = Service.select().where((Service.status=="unavailable") and (Service.queue=="clavardez"))
     sms_result = Service.select().where((Service.status=="unavailable") and (Service.queue=="scholars-portal-txt"))
@@ -120,7 +121,7 @@ if __name__ == '__main__':
     counter = 0
     while counter < min_alert_minute:
         get_presence()
-        time.sleep(60)
+        time.sleep(60) #sleep one minute
         counter +=1
     
     # After 10 min .. check this

@@ -55,5 +55,4 @@ This is a mockup, it will only send if one of the services has been down for at 
 3.  Replace Database with python dictionnary or in-memory sqlite
 2.  Add tests
 3.  Add Makefile
-6.  Add screenshot to Readme.md
 
