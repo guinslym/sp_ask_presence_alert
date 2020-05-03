@@ -24,6 +24,9 @@ python sp_ask_service_availability_alert.py
 # or
 poetry install 
 poetry run python sp_ask_service_availability_alert.py
+# or with make
+make poetrysetup
+make run
 ```
 In addition it is useful to execute it from a **crontab**
 `*/15 * * * * python sp_ask_service_availability_alert.py`

@@ -15,6 +15,12 @@ readme:
 info-readme:
 	echo "\nCommit the Readme file and push this repository on Github\n"
 
+.PHONY: poetrysetup
+poetrysetup:
+	poetry install
+info-poetrysetup:
+	echo "\nInstallation with Make using poetry\n"
+
 .PHONY: run
 run:
 	poetry run python sp_ask_service_availability_alert.py
