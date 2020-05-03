@@ -26,7 +26,7 @@ poetry install
 poetry run python sp_ask_service_availability_alert.py
 ```
 In addition it is useful to execute it from a **crontab**
-`*/15 * * * *`
+`*/15 * * * * python sp_ask_service_availability_alert.py`
 
 ## Requirement
 1.  This script requires a TWILLIO account credentials to send SMS 
