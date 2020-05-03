@@ -1,12 +1,14 @@
-__version__ = '0.1.0'
+__version__ = '0.1.3'
 
-from peewee import *
+#Python Standard
 from datetime import timedelta
 from datetime import datetime
-import requests
 import time
 import sys
 
+#package installed
+from peewee import *
+import requests
 from twilio.rest import Client
 from environs import Env
 env = Env()
@@ -46,7 +48,7 @@ class Service(Model):
 
 def check_service_and_insert_to_db():
     """Each minutes during Opening Hours
-        a script crawl the Main
+        a script ping the Main
         queues to know their status
         
         -scholars-portal-txt
@@ -105,8 +107,10 @@ def verify_Ask_service(min_alert_minute):
     Arguments:
         min_alert_minute {int} -- Minimum minute of downtime
     """
+    #retrieve how many time those services were 'unavailable'
     fr_result = Service.select().where((Service.status=="unavailable") and (Service.queue=="clavardez"))
     sms_result = Service.select().where((Service.status=="unavailable") and (Service.queue=="scholars-portal-txt"))
+
     if (len(fr_result) >= min_alert_minute) | (len(sms_result) >= min_alert_minute) :
         clavardez = len(Service.select().where((Service.status=="unavailable") and (Service.queue=="clavardez")))
         sms = len(Service.select().where((Service.status=="unavailable") and (Service.queue=="scholars-portal-txt")))
