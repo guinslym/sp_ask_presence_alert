@@ -58,5 +58,5 @@ This is a mockup, it will only send if one of the services has been down for at 
 1.  Add condition to run only on Ask open hours
 2.  Replace SMS with email to ASK SP inbox
 2.  Add tests
-3.  Add docker
+3.  Add Docker
 
