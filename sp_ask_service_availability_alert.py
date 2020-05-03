@@ -13,7 +13,9 @@ env = Env()
 # Read .env into os.environ
 env.read_env()
 
+#loggin system
 from log_setup import get_log_formatter
+app_log = get_log_formatter()
 
 queues = ['scholars-portal', "scholars-portal-txt", "clavardez"]
 start_url = "https://ca.libraryh3lp.com/presence/jid/"
@@ -42,15 +44,6 @@ class Service(Model):
     def __repr__(self):
         return "{0}:{1} :\t{2}".format("Queue",self.queue, self.status)
 
-def create_table():
-    Service.create_table()
-    #app_log.info("Created Table Service" )
-
-def seed():
-    Service.create(queue='scholars-portal-txt', status="available")
-    Service.create(queue='scholars-portal', status="available")
-    Service.create(queue='clavardez', status="unavailable")
-
 def check_service_and_insert_to_db():
     """Each minutes during Opening Hours
         a script crawl the Main
@@ -67,11 +60,17 @@ def check_service_and_insert_to_db():
             response = response.decode("utf-8")
             Service.insert(queue=queue, status=response).execute()
         except Exception as e:
-            # app_log.error("Can't add value in database"+ str(e) )
+            app_log.error("Can't add value in database"+ str(e) )
             pass
 
 def get_presence():
-    create_table()
+    """Insert the presence status in DB
+    Go online and check each Service Presence Status
+    and insert it in the DB
+
+    i.e. Does the ASK SMS service is open?
+    """
+    Service.create_table()
     check_service_and_insert_to_db()
     query = Service.select()
     queues = [service.queue for service in query]
@@ -80,6 +79,15 @@ def get_presence():
         print(service)
 
 def send_sms(web, clavardez, sms):
+    """Will send an SMS to Scholars Portal - Ask Coordinator
+
+    SECRETS: Require .env file or Environment variables
+
+    Arguments:
+        web {int} -- Number of Downtime in minutes
+        clavardez {int} -- Number of Downtime in minutes
+        sms {int} -- Number of Downtime in minutes
+    """
     account_sid = env("ACCOUNT_SID")
     auth_token = env("AUTH_TOKEN")
     client = Client(account_sid, auth_token)
@@ -90,6 +98,12 @@ def send_sms(web, clavardez, sms):
     )
 
 def verify_Ask_service(min_alert_minute):
+    """If Ask Service is down equal or more of the
+     'min_alert_minute' then send SMS
+
+    Arguments:
+        min_alert_minute {[type]} -- [description]
+    """
     fr_result = Service.select().where((Service.status=="unavailable") and (Service.queue=="clavardez"))
     sms_result = Service.select().where((Service.status=="unavailable") and (Service.queue=="scholars-portal-txt"))
     if (len(fr_result) >= min_alert_minute) | (len(sms_result) >= min_alert_minute) :
@@ -97,11 +111,11 @@ def verify_Ask_service(min_alert_minute):
         sms = len(Service.select().where((Service.status=="unavailable") and (Service.queue=="scholars-portal-txt")))
         web = len(Service.select().where((Service.status=="unavailable") and (Service.queue=="scholars-portal")))
         print("Ask Service Downtime\nweb-en:\t{0} min\nweb-fr:\t{1} min\nSMS:\t{2} min\n".format(web, clavardez, sms))
-        #send_sms(web, clavardez, sms)
+        send_sms(web, clavardez, sms)
         sys.exit()
 
 if __name__ == '__main__':
-    min_alert_minute = 2
+    min_alert_minute = 10
     Service.delete().execute() 
     counter = 0
     while counter < min_alert_minute:

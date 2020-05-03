@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "sp_ask_presence_alert"
+name = "sp_ask_service_availability_alert"
 version = "0.1.0"
 description = ""
 authors = ["Guinsly Mondesir <guinslym@gmail.com>"]
