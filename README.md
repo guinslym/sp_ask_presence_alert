@@ -4,6 +4,7 @@
 ![PyPI](https://img.shields.io/github/license/guinslym/ask_schools.svg)
 ](https://pypi.org/project/ask_schools/)
 [![TravisCI](https://travis-ci.org/guinslym/ask_schools.svg?branch=master)](https://travis-ci.org/guinslym/ask_schools)
+https://img.shields.io/pypi/dd/requests?style=flat-square
 <hr/>
 
 ## SP ASK Service SMS Alert script
@@ -55,6 +56,6 @@ This is a mockup, it will only send if one of the services has been down for at 
 
 1.  Replace SMS with email to ASK SP inbox
 2.  Add tests
-3.  Add Docker
+3.  ~~Add Docker~~
 4.  Move the logic to create a Mobile app
 
