@@ -19,12 +19,15 @@ Script to ping our 3  main LibraryH3lp services (web, clavardez, sms) and if one
 **SP ASK Service SMS Alert** is not a package but a **script** and can run by typing this in the terminal:
 
 ```
+## using pip 
 pip install -r requirements.txt
 python sp_ask_service_availability_alert.py
-# or
+
+## or using poetry
 poetry install 
 poetry run python sp_ask_service_availability_alert.py
-# or with make
+
+## if above installed; Use make
 make run
 ```
 In addition it is useful to execute it from a **crontab**
