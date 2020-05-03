@@ -33,9 +33,8 @@ In addition it is useful to execute it from a **crontab**
 # .env
 ACCOUNT_SID="Twillio account sid"
 AUTH_TOKEN="twillio auth token"
-FROM="Twiliio registered and purchase phone number in your account"
-TO="even if it's your personal phone number you need to register this phone in your twillio account"
-
+FROM="phone number"
+TO="phone number"
 ```
 
 ## Usage
