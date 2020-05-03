@@ -5,7 +5,8 @@
 ](https://pypi.org/project/ask_schools/)
 [![TravisCI](https://travis-ci.org/guinslym/ask_schools.svg?branch=master)](https://travis-ci.org/guinslym/ask_schools)
 <hr/>
-### SP ASK Service SMS Alert SCRIPT
+### SP ASK Service SMS Alert script
+<br/>
 Script to ping the LibraryH3lp 3 queues and if one of the queue is close after 15 minutes it will send an SMS or email to Scholars-Portal
 <br/>
 
