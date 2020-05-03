@@ -115,7 +115,7 @@ def verify_Ask_service(min_alert_minute):
         sys.exit()
 
 if __name__ == '__main__':
-    min_alert_minute = 3
+    min_alert_minute = 10
     Service.delete().execute() 
     counter = 0
     while counter < min_alert_minute:
