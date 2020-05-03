@@ -126,6 +126,4 @@ if __name__ == '__main__':
     # After 10 min .. check this
     verify_Ask_service(min_alert_minute)
 
-    breakpoint()
-
 

@@ -38,15 +38,11 @@ FROM="phone number"
 TO="phone number"
 ```
 
-## Usage
+## Screenshots
 
-Example:
-
-```python
-
-
-
-```
+<p float="left">
+    <img src="screenshots/result_sms.png" width="200"/>
+</p>
 
 
 ## Todo
