@@ -1,6 +1,6 @@
 __version__ = '0.1.3'
 
-#Python Standard
+#Python Standard library
 from datetime import timedelta
 from datetime import datetime
 import time

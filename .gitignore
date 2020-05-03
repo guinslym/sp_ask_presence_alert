@@ -112,3 +112,4 @@ unanswered_chats.html
 *.json
 *.db-shm
 *.db-wal
+*.code-workspace
