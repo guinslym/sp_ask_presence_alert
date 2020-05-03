@@ -41,7 +41,7 @@ TO="phone number"
 ## Screenshots
 
 <p float="left">
-    <img src="screenshots/result_sms.png" width="200"/>
+    <img src="screenshots/result_sms.png" width="400"/>
 </p>
 
 
