@@ -59,4 +59,5 @@ This is a mockup, it will only send if one of the services has been down for at 
 2.  Replace SMS with email to ASK SP inbox
 2.  Add tests
 3.  Add Docker
+4.  Move the logic to create a Mobile app
 
