@@ -33,23 +33,7 @@ def get_log_formatter():
     app_log.addHandler(my_handler)
     return app_log
 
-def is_hour_between(start, end, now):
-    is_between = False
 
-    is_between |= start <= now <= end
-    is_between |= end < start and (start <= now or now <= end)
-
-    return is_between
-
-def find_which_weekday():
-    day = datetime.today().weekday()
-    if day >= 1 and day < 5:
-        return [9.5, 22.15]
-    elif day == 5:
-        return [9.5, 17.15]
-    else:
-        #weekend
-        return [11.5, 1.5]
 
 if __name__ == '__main__':
     pass

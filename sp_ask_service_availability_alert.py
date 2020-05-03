@@ -29,7 +29,8 @@ db = SqliteDatabase('presence.db', pragmas={
     'cache_size': -1024 * 64})
 
 class Service(Model):
-    """Record queue/service and their Status to
+    """Database Table
+        Record queue/service and their Status to
         AVAILABLE,
         UNAVAILABLE, 
     """
@@ -119,7 +120,27 @@ def verify_Ask_service(min_alert_minute):
         send_sms(web, clavardez, sms)
         sys.exit()
 
-if __name__ == '__main__':
+def is_hour_between(start, end, now):
+    is_between = False
+
+    is_between |= start <= now <= end
+    is_between |= end < start and (start <= now or now <= end)
+
+    return is_between
+
+def find_opening_hours_for_today():
+    day = datetime.today().weekday()
+    if day >= 1 and day < 5:
+        return [10, 19]
+    elif day == 5:
+        return [10, 17]
+    else:
+        #weekend
+        return [12, 17]
+
+def service_vailability_alert():
+    """Main function
+    """
     min_alert_minute = 10
     Service.delete().execute() 
     counter = 0
@@ -130,5 +151,14 @@ if __name__ == '__main__':
     
     # After 10 min .. check this
     verify_Ask_service(min_alert_minute)
+
+if __name__ == '__main__':
+    start, end = find_opening_hours_for_today()
+    current_hour = datetime.today().hour
+    
+    # Run only on Ask open hours
+    if (current_hour >= start) and (current_hour <= end):
+        service_vailability_alert()
+
 
 
