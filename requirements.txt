@@ -3,4 +3,5 @@ peewee == ^3.13.3
 requests == ^2.23.0
 environs == ^7.4.0
 twilio == ^6.39.0
+pytz == ^2020.1
  
