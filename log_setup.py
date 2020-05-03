@@ -1,17 +1,17 @@
-import requests 
-import sched, time
-import pytz
+#Python STD package
+import time
 from pytz import timezone
 from datetime import datetime
 import random
-
 from pprint import pprint as print
 import os
-
 import logging
 from logging.handlers import RotatingFileHandler
 import sys
 
+#Installed packages
+import pytz
+import requests 
 
 fmt_date = '%Y-%m-%d'
 fmt_hour = '%H:%M:%S'
