@@ -59,6 +59,7 @@ TO="phone number"
 ```text
 
 docker build -t ask-sms-app .
+
 ```
 
 
@@ -66,5 +67,6 @@ docker build -t ask-sms-app .
 
 1.  Replace SMS with email to ASK SP inbox
 2.  Add tests
+3.  Add Cronjob in Dockerfile
 4.  Move the logic to create a Mobile app
 
