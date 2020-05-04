@@ -158,6 +158,7 @@ if __name__ == '__main__':
     
     # Run only on Ask open hours
     if (current_hour >= start) and (current_hour <= end):
+        app_log.info("withing Ask opening hours")
         service_vailability_alert()
 
 
