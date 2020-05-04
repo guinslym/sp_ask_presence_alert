@@ -12,7 +12,14 @@ RUN  apt-get install -y cron
 COPY . /app
 WORKDIR /app
 
+# Run WITHOUT cronjob
 RUN pip3 install -r requirements.txt
 RUN python3 /app/sp_ask_service_availability_alert.py 
+
+#Run with cronjob
+#ADD crontab-example /etc/cron.d/hello-cron
+#RUN chmod 0644 /etc/cron.d/hello-cron
+#RUN touch /var/log/cron.log
+#CMD cron && tail -f /var/log/cron.log
 
 #ENTRYPOINT /entrypoint.sh
