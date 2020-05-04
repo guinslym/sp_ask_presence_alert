@@ -54,6 +54,12 @@ FROM="phone number"
 TO="phone number"
 ```
 
+## Docker
+
+```text
+
+docker build -t ask-sms-app .
+```
 
 
 ## Todo
